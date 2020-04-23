@@ -40,6 +40,9 @@ fi
 # Create Log directory and Summary CSV file header
 mkdir -p $LOG_DIRECTORY
 SUMMARY_LOG=$LOG_DIRECTORY"/SUMMARY.csv"
+COMPLETION_LOG=$LOG_DIRECTORY"/COMPLETE.csv"
+echo "" >> $COMPLETION_LOG #initialize it
+
 if [[ ! -f "$SUMMARY_LOG" ]]; then
     echo " project, status, time (sec), success, error, failure, skipped, date, forkCount, threadCount, reuseForks, parallel" > $SUMMARY_LOG
 fi
@@ -60,6 +63,14 @@ fi
 # For each project run the experiment
 for project in $(ls $DATASET_DIRECTORY); do
 	
+	# If the project has been run for all configs then skip it. 
+	completion_status=$(cat $COMPLETION_LOG)
+	if [[ "$completion_status" == *"$project"* ]]; 
+ 	then 
+ 		echo "Project : "$project" has been analyzed already"
+ 		continue
+ 	fi
+
 	echo "*****************  "$project"  *****************"
 	project_directory=$DATASET_DIRECTORY'/'$project
 
@@ -102,4 +113,11 @@ for project in $(ls $DATASET_DIRECTORY); do
  	fi
 
  	cd $DATASET_DIRECTORY
+
+ 	# If the project has been run till the last config i.e. forkCount = 81, thread=10, parallel=suite
+ 	# then mark the project analysis as complete.
+ 	if [ "$2" -eq 81 ] && [ "$3" -eq 10 ] && [ "$5" == "suites" ]; 
+	then
+		echo $project"" >> $COMPLETION_LOG 
+	fi
 done

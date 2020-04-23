@@ -2,7 +2,7 @@
 
 ##################################################################
 # This script runs the experiment 1. This script must be situated
-# with the projects folder.
+# with the `projects\` folder.
 ##################################################################
 
 parallel=("methods" "classes" "classesAndMethods" "suitesAndClasses" "suitesAndMethods" "suites")
@@ -10,7 +10,7 @@ PROJECTS="projects"
 fork=1
 thread=1
 
-while [ $fork -le 80 ];
+while [ $fork -le 81 ];
 do
 	while [ $thread -le 10 ];
 	do
