@@ -1,2 +1,0 @@
- project, status, time (sec), date, forkCount, threadCount, reuseForks, parallel
-commons-codec , SUCCESS , 35.141 , 04-22-21-30-34 , 2 , 3 , true , classes
