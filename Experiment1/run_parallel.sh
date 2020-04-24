@@ -41,7 +41,10 @@ fi
 mkdir -p $LOG_DIRECTORY
 SUMMARY_LOG=$LOG_DIRECTORY"/SUMMARY.csv"
 COMPLETION_LOG=$LOG_DIRECTORY"/COMPLETE.csv"
-echo "" >> $COMPLETION_LOG #initialize it
+TIMEOUT_LOG=$LOG_DIRECTORY"/TIMEOUT.csv"
+
+touch $COMPLETION_LOG #initialize it
+touch $TIMEOUT_LOG #initialize it
 
 if [[ ! -f "$SUMMARY_LOG" ]]; then
     echo " project, status, time (sec), success, error, failure, skipped, date, forkCount, threadCount, reuseForks, parallel" > $SUMMARY_LOG
@@ -71,6 +74,14 @@ for project in $(ls $DATASET_DIRECTORY); do
  		continue
  	fi
 
+ 	# If the project has been timed out before then skip it too.
+ 	timeout_status=$(cat $TIMEOUT_LOG)
+	if [[ "$timeout_status" == *"$project"* ]]; 
+ 	then 
+ 		echo "Project : "$project" had timed out before"
+ 		continue
+ 	fi
+
 	echo "*****************  "$project"  *****************"
 	project_directory=$DATASET_DIRECTORY'/'$project
 
@@ -82,9 +93,16 @@ for project in $(ls $DATASET_DIRECTORY); do
     mvn -q compile exec:java -Dexec.args="$project_directory maven-surefire-plugin 2.19.1"
     cd $project_directory
 
-	# run test based on the param
-	result=$(mvn test $CONFIGURATION $MAVEN_SKIPS -fae)
-	echo "$result"
+	# run test based on the param with a time of 60 minutes
+	result=$(timeout -s SIGKILL 60m mvn test $CONFIGURATION $MAVEN_SKIPS -fae)
+	
+	# If timeout happened then skip this iteration
+	if [ "$?" -ne 0 ]; 
+ 	then
+ 		echo $project" , TIMEOUT , - , - , - , -, - , - , "$2" , "$3" , "$4" , "$5"" >> $SUMMARY_LOG
+ 		echo $project"" >> $TIMEOUT_LOG
+ 		continue
+ 	fi
 
 	# Grather surefire report and transfer each report to the Log directory.
 	# For multimodule projects multiple surefire reports are being generated.
@@ -106,8 +124,9 @@ for project in $(ls $DATASET_DIRECTORY); do
  	time=( $(echo "$result" | grep --text "\[INFO\] Total time:" | tail -n 1) )
  	
  	if [[ "$r" == *"[ERROR]"* ]]; 
- 	then 
+ 	then
  		echo $project" , ERROR , "${time[3]}" , "$numbers" , "$DATE_WITH_TIME" , "$2" , "$3" , "$4" , "$5"" >> $SUMMARY_LOG
+ 	
  	else
  		echo $project" , SUCCESS , "${time[3]}" , "$numbers" , "$DATE_WITH_TIME" , "$2" , "$3" , "$4" , "$5"" >> $SUMMARY_LOG
  	fi
