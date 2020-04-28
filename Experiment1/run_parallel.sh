@@ -33,6 +33,7 @@ DATE_WITH_TIME=`date "+%m-%d-%H-%M-%S"`
 if [ $# -eq 5 ]; 
 then
 	CONFIGURATION_LOG_DIR=$2'-'$3'-'$4'-'$5
+	CONFIGURATION=' -DforkCount='$2' -DthreadCount='$3' -DreuseForks='$4' -Dparallel='$5
 else 
 	CONFIGURATION_LOG_DIR="retest"
 fi
@@ -94,7 +95,8 @@ for project in $(ls $DATASET_DIRECTORY); do
     cd $project_directory
 
 	# run test based on the param with a time of 60 minutes
-	result=$(timeout -s SIGKILL 90m mvn test $CONFIGURATION $MAVEN_SKIPS -fae)
+	echo "********************"$CONFIGURATION"**********************"
+	result=$(timeout -s SIGKILL 90m mvn -q test $CONFIGURATION $MAVEN_SKIPS -fae)
 	
 	# If timeout happened then skip this iteration
 	if [ "$?" -eq 137 ]; 

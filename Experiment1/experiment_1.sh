@@ -4,6 +4,16 @@
 # This script runs the experiment 1. This script must be situated
 # with the `projects\` folder.
 ##################################################################
+BASE_DIRECTORY=$PWD
+MAVEN_POM_PROCESSOR=$PWD"/MavenPOMProcessor"
+SUREFIRE_REPORT_PARSER=$PWD"/surefirereportparser"
+
+# Compile the tools
+cd $MAVEN_POM_PROCESSOR
+mvn -q compile
+cd $SUREFIRE_REPORT_PARSER
+mvn -q compile
+cd $BASE_DIRECTORY
 
 parallel=("methods" "classes" "classesAndMethods" "suitesAndClasses" "suitesAndMethods" "suites")
 PROJECTS="projects"
