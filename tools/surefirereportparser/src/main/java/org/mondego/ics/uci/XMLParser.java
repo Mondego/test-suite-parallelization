@@ -108,6 +108,7 @@ public class XMLParser {
 					} else if (eElement.getElementsByTagName("error").getLength() > 0){
 						error.add(fqn);
 					} else if (eElement.getElementsByTagName("skipped").getLength() > 0){
+						System.out.println(fqn);
 						skip.add(fqn);
 					} else {
 						successful.add(fqn);
