@@ -97,7 +97,7 @@ for project in $(ls $DATASET_DIRECTORY); do
 	result=$(timeout -s SIGKILL 90m mvn test $CONFIGURATION $MAVEN_SKIPS -fae)
 	
 	# If timeout happened then skip this iteration
-	if [ "$?" -ne 0 ]; 
+	if [ "$?" -eq 137 ]; 
  	then
  		echo $project" , TIMEOUT , - , - , - , -, - , - , "$2" , "$3" , "$4" , "$5"" >> $SUMMARY_LOG
  		echo $project"" >> $TIMEOUT_LOG
