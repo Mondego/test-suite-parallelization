@@ -27,10 +27,10 @@ import org.xml.sax.SAXException;
  */
 public class XMLParser {
 
-	private static List<String> successful;
-	private static List<String> error;
-	private static List<String> skip;
-	private static List<String> failure;
+	private static List<String> successful = new ArrayList<String>();
+	private static List<String> error = new ArrayList<String>();
+	private static List<String> skip = new ArrayList<String>();
+	private static List<String> failure = new ArrayList<String>();
 	
 	public static void main(String[] args) {
 
@@ -47,27 +47,36 @@ public class XMLParser {
 		}
 		
 		// If output log file is given
-		if (args.length == 2) {
-			String filename = args[1];
-			PrintWriter writer = null;
-			try {
-				  writer = new PrintWriter(new File(filename));
-			      StringBuilder sb = new StringBuilder();
-			      sb.append(successCount);
-			      sb.append(',');
-			      sb.append(errorsCount);
-			      sb.append(',');
-			      sb.append(failuresCount);
-			      sb.append(',');  
-			      sb.append(skippedCount);
-			      sb.append(',');
-			      sb.append('\n');
+		if (args.length == 3) {
+			String errorFile = args[1];
+			String failureFile = args[2];
+			
+			PrintWriter errorWriter = null;
+			PrintWriter failureWriter = null;
 
-			      writer.write(sb.toString());
+			try {
+				  errorWriter = new PrintWriter(new File(errorFile));
+				  failureWriter = new PrintWriter(new File(failureFile));
+			      
+				  for (int i = 0; i < error.size(); i++) {
+					  StringBuilder sb = new StringBuilder();
+					  sb.append(error.get(i));
+					  sb.append('\n');
+				      errorWriter.write(sb.toString());
+				  }
+				  
+				  for (int i = 0; i < failure.size(); i++) {
+					  StringBuilder sb = new StringBuilder();
+					  sb.append(failure.get(i));
+					  sb.append('\n');
+					  failureWriter.write(sb.toString());
+				  }
+				  
 			    } catch (FileNotFoundException e) {
 			    	e.printStackTrace();
 			    } finally {
-			    	writer.close();
+			    	errorWriter.close();
+			    	failureWriter.close();
 			    }
 		} else {
 			System.out.println(
