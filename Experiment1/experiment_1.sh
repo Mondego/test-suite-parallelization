@@ -8,10 +8,10 @@
 parallel=("methods" "classes" "classesAndMethods" "suitesAndClasses" "suitesAndMethods" "suites")
 PROJECTS="projects"
 fork=1
-thread=1
 
 while [ $fork -le 81 ];
 do
+	thread=1
 	while [ $thread -le 10 ];
 	do
 		for i in {0..6};
