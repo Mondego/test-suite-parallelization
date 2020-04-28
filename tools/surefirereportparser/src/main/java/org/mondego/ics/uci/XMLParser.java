@@ -1,7 +1,9 @@
 package org.mondego.ics.uci;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +45,37 @@ public class XMLParser {
 		for( int i = 0; i<xmlfiles.size(); i++ ) {
 			processSingleXMLFile(xmlfiles.get(i));
 		}
+		
+		// If output log file is given
+		if (args.length == 2) {
+			String filename = args[1];
+			PrintWriter writer = null;
+			try {
+				  writer = new PrintWriter(new File(filename));
+			      StringBuilder sb = new StringBuilder();
+			      sb.append(successCount);
+			      sb.append(',');
+			      sb.append(errorsCount);
+			      sb.append(',');
+			      sb.append(failuresCount);
+			      sb.append(',');  
+			      sb.append(skippedCount);
+			      sb.append(',');
+			      sb.append('\n');
+
+			      writer.write(sb.toString());
+			    } catch (FileNotFoundException e) {
+			    	e.printStackTrace();
+			    } finally {
+			    	writer.close();
+			    }
+		} else {
+			System.out.println(
+					successful.size() + " , " + 
+					error.size() + " , " + 
+					failure.size() + " , " + 
+					skip.size());
+		}
 	}
 	
 	private static void processSingleXMLFile(String xml) {
@@ -59,20 +92,17 @@ public class XMLParser {
 				Node nNode = nList.item(i);
 				
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-
 					Element eElement = (Element) nNode;
-					if (eElement.getElementsByTagName("failure").getLength() > 0 || 
-							eElement.getElementsByTagName("error").getLength() > 0) {
-							//eElement.getElementsByTagName("skipped").getLength() > 0) {
-						System.out.println("Name : " + eElement.getAttribute("name"));
-						System.out.println("Test Class : " + eElement.getAttribute("classname"));
-						System.out.println("===================================================");
-						System.out.println("Failure : " + eElement.getElementsByTagName("failure").getLength());
-						System.out.println("Error : " + eElement.getElementsByTagName("error").getLength());
-						System.out.println("Skipped : " + eElement.getElementsByTagName("skipped").getLength());
-						System.out.println();
-						System.out.println();
-					}
+					String fqn = eElement.getAttribute("classname") + "." + eElement.getAttribute("name");
+					if (eElement.getElementsByTagName("failure").getLength() > 0){
+						failure.add(fqn);
+					} else if (eElement.getElementsByTagName("error").getLength() > 0){
+						error.add(fqn);
+					} else if (eElement.getElementsByTagName("skipped").getLength() > 0){
+						skip.add(fqn);
+					} else {
+						successful.add(fqn);
+					}						
 				}
 			}		
 		} catch (ParserConfigurationException e) {
