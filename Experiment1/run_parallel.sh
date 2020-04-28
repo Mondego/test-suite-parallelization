@@ -94,7 +94,7 @@ for project in $(ls $DATASET_DIRECTORY); do
     cd $project_directory
 
 	# run test based on the param with a time of 60 minutes
-	result=$(timeout -s SIGKILL 60m mvn test $CONFIGURATION $MAVEN_SKIPS -fae)
+	result=$(timeout -s SIGKILL 90m mvn test $CONFIGURATION $MAVEN_SKIPS -fae)
 	
 	# If timeout happened then skip this iteration
 	if [ "$?" -ne 0 ]; 
