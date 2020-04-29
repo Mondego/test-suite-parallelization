@@ -94,9 +94,10 @@ for project in $(ls $DATASET_DIRECTORY); do
     mvn -q compile exec:java -Dexec.args="$project_directory maven-surefire-plugin 2.19.1"
     cd $project_directory
 
-	# run test based on the param with a time of 60 minutes
+	# run test based on the param with a time of 30 minutes
+	# ****** TIMEOUT 30 MINUTES IS TEMPORARY **********************************
 	echo "******* "$CONFIGURATION" *******"
-	result=$(timeout -s SIGKILL 90m mvn test $CONFIGURATION $MAVEN_SKIPS -fae)
+	result=$(timeout -s SIGKILL 30m mvn test $CONFIGURATION $MAVEN_SKIPS -fae)
 	
 	# If timeout happened then skip this iteration
 	if [ "$?" -eq 137 ]; 
