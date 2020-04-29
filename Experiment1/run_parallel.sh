@@ -95,8 +95,8 @@ for project in $(ls $DATASET_DIRECTORY); do
     cd $project_directory
 
 	# run test based on the param with a time of 60 minutes
-	echo "********************"$CONFIGURATION"**********************"
-	result=$(timeout -s SIGKILL 90m mvn -q test $CONFIGURATION $MAVEN_SKIPS -fae)
+	echo "******* "$CONFIGURATION" *******"
+	result=$(timeout -s SIGKILL 90m mvn test $CONFIGURATION $MAVEN_SKIPS -fae)
 	
 	# If timeout happened then skip this iteration
 	if [ "$?" -eq 137 ]; 
@@ -133,6 +133,9 @@ for project in $(ls $DATASET_DIRECTORY); do
  		echo $project" , SUCCESS , "${time[3]}" , "$numbers" , "$DATE_WITH_TIME" , "$2" , "$3" , "$4" , "$5"" >> $SUMMARY_LOG
  	fi
 
+ 	# Log particular tests that failed and errored. These tests will have to be run separately then.
+ 	cd $SUREFIRE_REPORT_PARSER 
+	mvn -q exec:java@xml-cli -Dexec.args="$project_directory $project_log_directory'/ERROR.txt' $project_log_directory'/FAILURE.txt' $project_log_directory'/SKIPPED.txt'"
  	cd $DATASET_DIRECTORY
 
  	# If the project has been run till the last config i.e. forkCount = 81, thread=10, parallel=suite

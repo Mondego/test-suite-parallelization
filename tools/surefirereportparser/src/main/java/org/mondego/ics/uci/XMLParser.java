@@ -47,16 +47,19 @@ public class XMLParser {
 		}
 		
 		// If output log file is given
-		if (args.length == 3) {
+		if (args.length == 4) {
 			String errorFile = args[1];
 			String failureFile = args[2];
+			String skippedFile = args[2];
 			
 			PrintWriter errorWriter = null;
 			PrintWriter failureWriter = null;
-
+			PrintWriter skippedWriter = null;
+			
 			try {
 				  errorWriter = new PrintWriter(new File(errorFile));
 				  failureWriter = new PrintWriter(new File(failureFile));
+				  skippedWriter = new PrintWriter(new File(skippedFile));
 			      
 				  for (int i = 0; i < error.size(); i++) {
 					  StringBuilder sb = new StringBuilder();
@@ -70,6 +73,13 @@ public class XMLParser {
 					  sb.append(failure.get(i));
 					  sb.append('\n');
 					  failureWriter.write(sb.toString());
+				  }
+				  
+				  for (int i = 0; i < skip.size(); i++) {
+					  StringBuilder sb = new StringBuilder();
+					  sb.append(skip.get(i));
+					  sb.append('\n');
+					  skippedWriter.write(sb.toString());
 				  }
 				  
 			    } catch (FileNotFoundException e) {
@@ -104,11 +114,12 @@ public class XMLParser {
 					Element eElement = (Element) nNode;
 					String fqn = eElement.getAttribute("classname") + "." + eElement.getAttribute("name");
 					if (eElement.getElementsByTagName("failure").getLength() > 0){
+						System.out.println("Failure : " +  fqn);
 						failure.add(fqn);
 					} else if (eElement.getElementsByTagName("error").getLength() > 0){
+						System.out.println("Error : " +  fqn);
 						error.add(fqn);
 					} else if (eElement.getElementsByTagName("skipped").getLength() > 0){
-						System.out.println(fqn);
 						skip.add(fqn);
 					} else {
 						successful.add(fqn);

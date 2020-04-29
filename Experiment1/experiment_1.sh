@@ -24,7 +24,7 @@ do
 	thread=1
 	while [ $thread -le 10 ];
 	do
-		for i in {0..6};
+		for i in {0..5};
 		do
 			./run_parallel.sh $PROJECTS $fork $thread true ${parallel[$i]}
 		done

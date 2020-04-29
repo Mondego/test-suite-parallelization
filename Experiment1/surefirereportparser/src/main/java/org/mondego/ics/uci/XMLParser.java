@@ -1,7 +1,9 @@
 package org.mondego.ics.uci;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,10 +27,10 @@ import org.xml.sax.SAXException;
  */
 public class XMLParser {
 
-	private static List<String> successful;
-	private static List<String> error;
-	private static List<String> skip;
-	private static List<String> failure;
+	private static List<String> successful = new ArrayList<String>();
+	private static List<String> error = new ArrayList<String>();
+	private static List<String> skip = new ArrayList<String>();
+	private static List<String> failure = new ArrayList<String>();
 	
 	public static void main(String[] args) {
 
@@ -42,6 +44,56 @@ public class XMLParser {
 		System.out.println(xmlfiles.size());
 		for( int i = 0; i<xmlfiles.size(); i++ ) {
 			processSingleXMLFile(xmlfiles.get(i));
+		}
+		
+		// If output log file is given
+		if (args.length == 4) {
+			String errorFile = args[1];
+			String failureFile = args[2];
+			String skippedFile = args[2];
+			
+			PrintWriter errorWriter = null;
+			PrintWriter failureWriter = null;
+			PrintWriter skippedWriter = null;
+			
+			try {
+				  errorWriter = new PrintWriter(new File(errorFile));
+				  failureWriter = new PrintWriter(new File(failureFile));
+				  skippedWriter = new PrintWriter(new File(skippedFile));
+			      
+				  for (int i = 0; i < error.size(); i++) {
+					  StringBuilder sb = new StringBuilder();
+					  sb.append(error.get(i));
+					  sb.append('\n');
+				      errorWriter.write(sb.toString());
+				  }
+				  
+				  for (int i = 0; i < failure.size(); i++) {
+					  StringBuilder sb = new StringBuilder();
+					  sb.append(failure.get(i));
+					  sb.append('\n');
+					  failureWriter.write(sb.toString());
+				  }
+				  
+				  for (int i = 0; i < skip.size(); i++) {
+					  StringBuilder sb = new StringBuilder();
+					  sb.append(skip.get(i));
+					  sb.append('\n');
+					  skippedWriter.write(sb.toString());
+				  }
+				  
+			    } catch (FileNotFoundException e) {
+			    	e.printStackTrace();
+			    } finally {
+			    	errorWriter.close();
+			    	failureWriter.close();
+			    }
+		} else {
+			System.out.println(
+					successful.size() + " , " + 
+					error.size() + " , " + 
+					failure.size() + " , " + 
+					skip.size());
 		}
 	}
 	
@@ -59,20 +111,19 @@ public class XMLParser {
 				Node nNode = nList.item(i);
 				
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-
 					Element eElement = (Element) nNode;
-					if (eElement.getElementsByTagName("failure").getLength() > 0 || 
-							eElement.getElementsByTagName("error").getLength() > 0) {
-							//eElement.getElementsByTagName("skipped").getLength() > 0) {
-						System.out.println("Name : " + eElement.getAttribute("name"));
-						System.out.println("Test Class : " + eElement.getAttribute("classname"));
-						System.out.println("===================================================");
-						System.out.println("Failure : " + eElement.getElementsByTagName("failure").getLength());
-						System.out.println("Error : " + eElement.getElementsByTagName("error").getLength());
-						System.out.println("Skipped : " + eElement.getElementsByTagName("skipped").getLength());
-						System.out.println();
-						System.out.println();
-					}
+					String fqn = eElement.getAttribute("classname") + "." + eElement.getAttribute("name");
+					if (eElement.getElementsByTagName("failure").getLength() > 0){
+						System.out.println("Failure : " +  fqn);
+						failure.add(fqn);
+					} else if (eElement.getElementsByTagName("error").getLength() > 0){
+						System.out.println("Error : " +  fqn);
+						error.add(fqn);
+					} else if (eElement.getElementsByTagName("skipped").getLength() > 0){
+						skip.add(fqn);
+					} else {
+						successful.add(fqn);
+					}						
 				}
 			}		
 		} catch (ParserConfigurationException e) {
