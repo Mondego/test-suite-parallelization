@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -31,6 +33,7 @@ public class XMLParser {
 	private static List<String> error = new ArrayList<String>();
 	private static List<String> skip = new ArrayList<String>();
 	private static List<String> failure = new ArrayList<String>();
+	private static Map<String, Double> time = new HashMap<String, Double>();
 	
 	public static void main(String[] args) {
 
@@ -88,7 +91,16 @@ public class XMLParser {
 			    	errorWriter.close();
 			    	failureWriter.close();
 			    }
-		} else {
+		} else if (args.length == 2) {
+			String singleTest = args[1];
+			if (successful.contains(singleTest)) {
+				System.out.println(singleTest + " :  SUCCESSFUL");
+			} else  {
+				System.out.println(singleTest + " :  FAILURE/ERROR");
+			}
+		}
+		
+		else {
 			System.out.println(
 					successful.size() + " , " + 
 					error.size() + " , " + 
