@@ -23,6 +23,13 @@ fi
 MAVEN_POM_PROCESSOR=$BASE_DIRECTORY"/MavenPOMProcessor"
 SUREFIRE_REPORT_PARSER=$BASE_DIRECTORY"/surefirereportparser"
 
+# Compile the tools
+cd $MAVEN_POM_PROCESSOR
+mvn -q compile
+cd $SUREFIRE_REPORT_PARSER
+mvn -q compile
+cd $BASE_DIRECTORY
+
 # This line changes surefire version to make the project compatible.
 cd $MAVEN_POM_PROCESSOR
 mvn -q compile exec:java -Dexec.args="$PROJECT_DIRECTORY maven-surefire-plugin 2.19.1"

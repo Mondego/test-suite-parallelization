@@ -174,6 +174,12 @@ do
 				mvn -q exec:java@xml-cli -Dexec.args="$project_directory $project_log_directory'/ERROR.txt' $project_log_directory'/FAILURE.txt' $project_log_directory'/SKIPPED.txt'"
 			 	cd $project_directory
 
+			 	# This step runs each of the errored tests and writes the results in 
+			 	# this paricular config's log directory
+			 	cd $BASE_DIRECTORY
+			 	./run_singe_test.sh $project $project_log_directory $project_log_directory'/ERROR.txt'
+			 	cd $project_directory
+
 			 	# Log the completed config to a file. So that the same config is not run again
 			 	echo $config_status >> $COMPLETED_CONFIGS_LOG
 			done
