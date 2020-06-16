@@ -1,0 +1,4 @@
+io/github/bucket4j/grid/ignite/Ignite.class
+io/github/bucket4j/grid/ignite/IgniteBucketBuilder.class
+io/github/bucket4j/grid/ignite/IgniteProxy.class
+io/github/bucket4j/grid/ignite/IgniteProxyManager.class

@@ -1,0 +1,12 @@
+io/github/bucket4j/grid/coherence/pof/AbstractBucket4jPofSerializer.class
+io/github/bucket4j/grid/coherence/CoherenceEntryProcessorAdapter.class
+io/github/bucket4j/grid/coherence/pof/GridBucketStatePofSerializer.class
+io/github/bucket4j/grid/coherence/CoherenceMutableEntryAdapter.class
+io/github/bucket4j/grid/coherence/CoherenceProxy$1.class
+io/github/bucket4j/grid/coherence/CoherenceProxy.class
+io/github/bucket4j/grid/coherence/pof/CommandResultPofSerializer.class
+io/github/bucket4j/grid/coherence/CoherenceEntryProcessorAdapter$1.class
+io/github/bucket4j/grid/coherence/pof/CoherenceEntryProcessorAdapterPofSerializer.class
+io/github/bucket4j/grid/coherence/CoherenceProxyManager.class
+io/github/bucket4j/grid/coherence/Coherence.class
+io/github/bucket4j/grid/coherence/CoherenceBucketBuilder.class
