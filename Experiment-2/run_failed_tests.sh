@@ -30,8 +30,6 @@ do
 
 	result=$(java -cp $CLASSPATH TestRunner $line)
 	
-	echo "***********************************************************"
-
 	SAVEIFS=$IFS   
 	IFS=$'\n'      
 	names=($result) 
@@ -42,11 +40,8 @@ do
 	for (( i=0; i<${#names[@]}; i++ ))
 	do
 	    length=$(( length+1 ))	
-	    echo $length"	*********	"${names[$i]}	
 	done
 
 	echo $PROJECT_NAME" , "$line" , "${names[$length - 3]}" , "${names[$length - 2]}" , "${names[$length - 1]} >> $ERROR_TEST_RUN_ISOLATION
-
-	echo "***********************************************************"
 
 done < "$ERROR_LOG"

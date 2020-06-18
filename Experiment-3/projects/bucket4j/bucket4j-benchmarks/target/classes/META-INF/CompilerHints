@@ -1,0 +1,14 @@
+dontinline,*.*_all_jmhStub
+dontinline,*.*_avgt_jmhStub
+dontinline,*.*_sample_jmhStub
+dontinline,*.*_ss_jmhStub
+dontinline,*.*_thrpt_jmhStub
+inline,io/github/bucket4j/BaseLineWithoutSynchronization.baseLineGetCurrentTimeMillis
+inline,io/github/bucket4j/BaseLineWithoutSynchronization.tryConsumeOneToken_alwaysSuccess
+inline,io/github/bucket4j/BaseLineWithoutSynchronization.tryConsumeOneToken_alwaysSuccess_withoutRefill
+inline,io/github/bucket4j/ConsumeMostlySuccess.consumeOneToken_mostlySuccess_GuavaLimiter
+inline,io/github/bucket4j/ConsumeMostlySuccess.consumeOneToken_mostlySuccess_LockFree
+inline,io/github/bucket4j/ConsumeMostlySuccess.consumeOneToken_mostlySuccess_Synchronized
+inline,io/github/bucket4j/TryConsumeMostlySuccess.tryConsumeOneToken_mostlySuccess_GuavaLimiter
+inline,io/github/bucket4j/TryConsumeMostlySuccess.tryConsumeOneToken_mostlySuccess_LockFree
+inline,io/github/bucket4j/TryConsumeMostlySuccess.tryConsumeOneToken_mostlySuccess_Synchronized

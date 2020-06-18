@@ -1,0 +1,6 @@
+ Project, Test, Success ?, Time (sec), Log
+bucket4j , CoherenceWithPofSerializationTest.CoherenceWithPofSerializationTest , FAILURE , 0.001 , No tests found matching Method CoherenceWithPofSerializationTest(CoherenceWithPofSerializationTest) from org.junit.internal.requests.ClassRequest@200a570f,
+bucket4j , io.github.bucket4j.hazelcast.HazelcastTest.testUnconditionalConsumeVerbose , FAILURE , 0.687 , DataSerializableFactory[-33] is already registered! com.hazelcast.internal.journal.EventJournalDataSerializerHook$1@78f38ebe -> com.hazelcast.cardinality.impl.CardinalityEstimatorDataSerializerHook$1@3737015e,
+bucket4j , io.github.bucket4j.hazelcast.HazelcastTest.testThrowExceptionRecoveryStrategy , FAILURE , 0.708 , DataSerializableFactory[-33] is already registered! com.hazelcast.internal.journal.EventJournalDataSerializerHook$1@26ca996e -> com.hazelcast.cardinality.impl.CardinalityEstimatorDataSerializerHook$1@5f7862e6,
+bucket4j , io.github.bucket4j.hazelcast.HazelcastTest.testBucketWithNotLazyConfiguration , FAILURE , 0.706 , DataSerializableFactory[-33] is already registered! com.hazelcast.internal.journal.EventJournalDataSerializerHook$1@78f38ebe -> com.hazelcast.cardinality.impl.CardinalityEstimatorDataSerializerHook$1@3737015e,
+bucket4j , compatibility_test.LuaScriptIsolationTest.test , FAILURE , 0.029966496 , UNKNOWN

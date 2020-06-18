@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="compatibility_test.LuaScriptIsolationTest" time="30.336" tests="1" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.252-b09"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/maruf/bucket4j"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="test" value="CoherenceWithJdkSerializationTest#testBucketWithNotLazyConfiguration,io.github.bucket4j.hazelcast.HazelcastTest#testTryConsumeWithLimit,io.github.bucket4j.hazelcast.HazelcastTest#testLocateConfigurationThroughProxyManager,io.github.bucket4j.hazelcast.HazelcastTest#testTryConsume,io.github.bucket4j.hazelcast.HazelcastTest#testBucketWithNotLazyConfiguration,compatibility_test.LuaScriptIsolationTest#test"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/maruf/bucket4j"/>
+    <property name="java.runtime.version" value="1.8.0_252-8u252-b09-1ubuntu1-b09"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="5.4.0-37-generic"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/home/maruf"/>
+    <property name="user.timezone" value="America/Los_Angeles"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="maruf"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="failIfNoTests" value="false"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dtest=CoherenceWithJdkSerializationTest#testBucketWithNotLazyConfiguration,io.github.bucket4j.hazelcast.HazelcastTest#testTryConsumeWithLimit,io.github.bucket4j.hazelcast.HazelcastTest#testLocateConfigurationThroughProxyManager,io.github.bucket4j.hazelcast.HazelcastTest#testTryConsume,io.github.bucket4j.hazelcast.HazelcastTest#testBucketWithNotLazyConfiguration,compatibility_test.LuaScriptIsolationTest#test -fae -DfailIfNoTests=false"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_252"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="test" classname="compatibility_test.LuaScriptIsolationTest" time="0.003">
+    <error message="Could not find a valid Docker environment. Please see logs and check configuration" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Could not find a valid Docker environment. Please see logs and check configuration
+	at compatibility_test.LuaScriptIsolationTest.<init>(LuaScriptIsolationTest.java:29)
+]]></error>
+    <system-out><![CDATA[18:21:43.720 [main] INFO  org.testcontainers.dockerclient.DockerClientProviderStrategy - Will use 'okhttp' transport
+18:21:53.825 [main] ERROR org.testcontainers.dockerclient.EnvironmentAndSystemPropertyClientProviderStrategy - ping failed with configuration Environment variables, system properties and defaults. Resolved: 
+    dockerHost=unix:///var/run/docker.sock
+    apiVersion='{UNKNOWN_VERSION}'
+    registryUrl='https://index.docker.io/v1/'
+    registryUsername='maruf'
+    registryPassword='null'
+    registryEmail='null'
+    dockerConfig='DefaultDockerClientConfig[dockerHost=unix:///var/run/docker.sock,registryUsername=maruf,registryPassword=<null>,registryEmail=<null>,registryUrl=https://index.docker.io/v1/,dockerConfigPath=/home/maruf/.docker,sslConfig=<null>,apiVersion={UNKNOWN_VERSION},dockerConfig=<null>]'
+ due to org.rnorth.ducttape.TimeoutException: Timeout waiting for result with exception
+org.rnorth.ducttape.TimeoutException: Timeout waiting for result with exception
+	at org.rnorth.ducttape.unreliables.Unreliables.retryUntilSuccess(Unreliables.java:51)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.ping(DockerClientProviderStrategy.java:190)
+	at org.testcontainers.dockerclient.EnvironmentAndSystemPropertyClientProviderStrategy.test(EnvironmentAndSystemPropertyClientProviderStrategy.java:42)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$getFirstValidStrategy$2(DockerClientProviderStrategy.java:113)
+	at java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:269)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.tryAdvance(StreamSpliterators.java:303)
+	at java.util.stream.Streams$ConcatSpliterator.tryAdvance(Streams.java:731)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findAny(ReferencePipeline.java:536)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.getFirstValidStrategy(DockerClientProviderStrategy.java:148)
+	at org.testcontainers.DockerClientFactory.client(DockerClientFactory.java:105)
+	at org.testcontainers.containers.GenericContainer.<init>(GenericContainer.java:162)
+	at compatibility_test.LuaScriptIsolationTest.<init>(LuaScriptIsolationTest.java:29)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:217)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:266)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:386)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:323)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:143)
+Caused by: java.io.IOException: com.sun.jna.LastErrorException: [13] Permission denied
+	at org.testcontainers.shaded.org.scalasbt.ipcsocket.UnixDomainSocket.<init>(UnixDomainSocket.java:62)
+	at org.testcontainers.dockerclient.transport.okhttp.UnixSocketFactory$1.<init>(UnixSocketFactory.java:27)
+	at org.testcontainers.dockerclient.transport.okhttp.UnixSocketFactory.createSocket(UnixSocketFactory.java:27)
+	at org.testcontainers.shaded.okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:234)
+	at org.testcontainers.shaded.okhttp3.internal.connection.RealConnection.connect(RealConnection.java:160)
+	at org.testcontainers.shaded.okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
+	at org.testcontainers.shaded.okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
+	at org.testcontainers.shaded.okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
+	at org.testcontainers.shaded.okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at org.testcontainers.shaded.okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at org.testcontainers.shaded.okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at org.testcontainers.shaded.okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at org.testcontainers.shaded.okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at org.testcontainers.shaded.okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
+	at org.testcontainers.shaded.okhttp3.RealCall.execute(RealCall.java:77)
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpInvocationBuilder.execute(OkHttpInvocationBuilder.java:262)
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpInvocationBuilder.execute(OkHttpInvocationBuilder.java:257)
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpInvocationBuilder.get(OkHttpInvocationBuilder.java:223)
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpDockerCmdExecFactory$1.execute(OkHttpDockerCmdExecFactory.java:125)
+	at org.testcontainers.dockerclient.transport.okhttp.OkHttpDockerCmdExecFactory$1.execute(OkHttpDockerCmdExecFactory.java:118)
+	at com.github.dockerjava.core.exec.AbstrSyncDockerCmdExec.exec(AbstrSyncDockerCmdExec.java:21)
+	at com.github.dockerjava.core.command.AbstrDockerCmd.exec(AbstrDockerCmd.java:35)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$null$4(DockerClientProviderStrategy.java:193)
+	at org.rnorth.ducttape.ratelimits.RateLimiter.getWhenReady(RateLimiter.java:51)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$ping$5(DockerClientProviderStrategy.java:191)
+	at org.rnorth.ducttape.unreliables.Unreliables.lambda$retryUntilSuccess$0(Unreliables.java:41)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.sun.jna.LastErrorException: [13] Permission denied
+	at org.testcontainers.shaded.org.scalasbt.ipcsocket.UnixDomainSocketLibrary.connect(Native Method)
+	at org.testcontainers.shaded.org.scalasbt.ipcsocket.UnixDomainSocket.<init>(UnixDomainSocket.java:57)
+	... 35 common frames omitted
+18:21:53.827 [main] INFO  org.testcontainers.dockerclient.DockerClientProviderStrategy - Will use 'okhttp' transport
+18:22:03.833 [main] INFO  org.testcontainers.dockerclient.DockerClientProviderStrategy - Will use 'okhttp' transport
+18:22:13.835 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy - Could not find a valid Docker environment. Please check configuration. Attempted configurations were:
+18:22:13.836 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy -     EnvironmentAndSystemPropertyClientProviderStrategy: failed with exception InvalidConfigurationException (ping failed)
+18:22:13.836 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy -     UnixSocketClientProviderStrategy: failed with exception InvalidConfigurationException (ping failed). Root cause LastErrorException ([13] Permission denied)
+18:22:13.836 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy -     ProxiedUnixSocketClientProviderStrategy: failed with exception InvalidConfigurationException (ping failed). Root cause TimeoutException (null)
+18:22:13.836 [main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy - As no valid configuration was found, execution cannot continue
+]]></system-out>
+  </testcase>
+</testsuite>

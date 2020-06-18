@@ -1,0 +1,7 @@
+ Project, Test, Success ?, Time (sec), Log
+bucket4j , CoherenceWithJdkSerializationTest.testBucketWithNotLazyConfiguration , SUCCESSFUL , 9.476 , NONE
+bucket4j , io.github.bucket4j.hazelcast.HazelcastTest.testTryConsumeWithLimit , FAILURE , 0.697 , DataSerializableFactory[-33] is already registered! com.hazelcast.internal.journal.EventJournalDataSerializerHook$1@21d5b788 -> com.hazelcast.cardinality.impl.CardinalityEstimatorDataSerializerHook$1@35092525,
+bucket4j , io.github.bucket4j.hazelcast.HazelcastTest.testLocateConfigurationThroughProxyManager , FAILURE , 0.642 , DataSerializableFactory[-33] is already registered! com.hazelcast.internal.journal.EventJournalDataSerializerHook$1@78f38ebe -> com.hazelcast.cardinality.impl.CardinalityEstimatorDataSerializerHook$1@3737015e,
+bucket4j , io.github.bucket4j.hazelcast.HazelcastTest.testTryConsume , FAILURE , 0.675 , DataSerializableFactory[-33] is already registered! com.hazelcast.internal.journal.EventJournalDataSerializerHook$1@78f38ebe -> com.hazelcast.cardinality.impl.CardinalityEstimatorDataSerializerHook$1@3737015e,
+bucket4j , io.github.bucket4j.hazelcast.HazelcastTest.testBucketWithNotLazyConfiguration , FAILURE , 0.632 , DataSerializableFactory[-33] is already registered! com.hazelcast.internal.journal.EventJournalDataSerializerHook$1@78f38ebe -> com.hazelcast.cardinality.impl.CardinalityEstimatorDataSerializerHook$1@3737015e,
+bucket4j , compatibility_test.LuaScriptIsolationTest.test , FAILURE , 0.029306973 , UNKNOWN

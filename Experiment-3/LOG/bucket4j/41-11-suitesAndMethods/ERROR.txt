@@ -1,0 +1,6 @@
+CoherenceWithJdkSerializationTest.CoherenceWithJdkSerializationTest
+io.github.bucket4j.hazelcast.HazelcastTest.testBucketRegistryWithKeyIndependentConfiguration
+io.github.bucket4j.hazelcast.HazelcastTest.testUnconditionalConsumeVerbose
+io.github.bucket4j.hazelcast.HazelcastTest.testTryConsumeAsync
+io.github.bucket4j.hazelcast.HazelcastTest.testTryConsumeWithLimit
+compatibility_test.LuaScriptIsolationTest.test

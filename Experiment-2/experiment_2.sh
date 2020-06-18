@@ -87,10 +87,6 @@ do
 			 	./run_failed_tests.sh $project $project_log_directory $project_log_directory'/FAILURE.txt' $project_directory
 			 	./run_failed_tests.sh $project $project_log_directory $project_log_directory'/ERROR.txt' $project_directory
 
-			 	Dtest=$(java -cp . GenerateMavenTestConfig $project_log_directory'/FAILURE.txt')
-			 	cd $project_directory
-			 	mvn test -Dtest=$Dtest $MAVEN_SKIPS
-
 			done
 			thread=$(( thread+5 ))	
 		done

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.vladimir-bukhtoyarov</groupId>
+  <artifactId>bucket4j-infinispan-all</artifactId>
+  <version>4.10.0</version>
+  <packaging>pom</packaging>
+  <description>bucket4j - is a java implementation of token bucket algorithm for rate limiting</description>
+  <url>http://github.com/vladimir-bukhtoyarov/bucket4j/bucket4j-infinispan-all</url>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>vladimir-bukhtoyarov</id>
+      <name>Vladimir Bukhtoyarov</name>
+      <email>jsecoder@mail.ru</email>
+      <url>https://github.com/vladimir-bukhtoyarov</url>
+      <organization>DINS</organization>
+      <organizationUrl>http://www.dins.ru/</organizationUrl>
+      <roles>
+        <role>Lead software developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git@github.com:vladimir-bukhtoyarov/bucket4j/bucket4j-infinispan-all</connection>
+    <developerConnection>scm:git:git@github.com:vladimir-bukhtoyarov/bucket4j.git/bucket4j-infinispan-all</developerConnection>
+    <url>http://github.com/vladimir-bukhtoyarov/bucket4j/bucket4j-infinispan-all</url>
+  </scm>
+  <distributionManagement>
+    <repository>
+      <id>vladimir-bukhtoyarov-bintray-repo</id>
+      <url>https://api.bintray.com/maven/vladimir-bukhtoyarov/maven/bucket4j-parent/</url>
+    </repository>
+  </distributionManagement>
+</project>
