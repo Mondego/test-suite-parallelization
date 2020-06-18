@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: compatibility_test.LuaScriptIsolationTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 30.336 s <<< FAILURE! - in compatibility_test.LuaScriptIsolationTest
-test(compatibility_test.LuaScriptIsolationTest)  Time elapsed: 0.003 s  <<< ERROR!
-java.lang.IllegalStateException: Could not find a valid Docker environment. Please see logs and check configuration
-	at compatibility_test.LuaScriptIsolationTest.<init>(LuaScriptIsolationTest.java:29)
-

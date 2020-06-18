@@ -1,0 +1,6 @@
+CoherenceWithPofSerializationTest.CoherenceWithPofSerializationTest
+io.github.bucket4j.hazelcast.HazelcastTest.testBucketRegistryWithKeyIndependentConfiguration
+io.github.bucket4j.hazelcast.HazelcastTest.testLocateBucketThroughProxyManager
+io.github.bucket4j.hazelcast.HazelcastTest.testThrowExceptionRecoveryStrategy
+io.github.bucket4j.hazelcast.HazelcastTest.testTryConsume
+compatibility_test.LuaScriptIsolationTest.test

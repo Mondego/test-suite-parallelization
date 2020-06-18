@@ -1,9 +1,0 @@
-io/github/bucket4j/grid/infinispan/InfinispanBucketBuilder.class
-io/github/bucket4j/grid/infinispan/SerializableFunctionAdapter$MutableEntryAdapter.class
-io/github/bucket4j/grid/infinispan/InfinispanProxy.class
-io/github/bucket4j/grid/infinispan/serialization/Bucket4jProtobufContextInitializer.class
-io/github/bucket4j/grid/infinispan/SerializableFunctionAdapter$1.class
-io/github/bucket4j/grid/infinispan/InfinispanProxyManager.class
-io/github/bucket4j/grid/infinispan/serialization/ProtobufMessageMarshaller.class
-io/github/bucket4j/grid/infinispan/Infinispan.class
-io/github/bucket4j/grid/infinispan/SerializableFunctionAdapter.class

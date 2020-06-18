@@ -1,6 +1,0 @@
-io/github/bucket4j/grid/jcache/infinispan/InfinispanJCacheTest.class
-io/github/bucket4j/grid/jcache/infinispan/InfinispanJCacheTest$TestClassLoader.class
-io/github/bucket4j/grid/jcache/hazelcast/HazelcastJCacheTest.class
-io/github/bucket4j/grid/jcache/ignite/IgniteJCacheTest.class
-io/github/bucket4j/grid/jcache/compatibility_investigation/CompatibilityTest.class
-io/github/bucket4j/grid/jcache/AbstractJCacheTest.class

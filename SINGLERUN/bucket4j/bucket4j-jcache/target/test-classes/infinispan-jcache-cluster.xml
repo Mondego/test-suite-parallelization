@@ -1,6 +1,0 @@
-<infinispan>
-    <cache-container default-cache="my_buckets">
-        <transport cluster="jcache-cluster" />
-        <replicated-cache name="my_buckets" />
-    </cache-container>
-</infinispan>

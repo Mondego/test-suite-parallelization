@@ -1,0 +1,8 @@
+CoherenceWithPofSerializationTest.CoherenceWithPofSerializationTest
+io.github.bucket4j.hazelcast.HazelcastTest.testTryConsumeAsyncWithLimit
+io.github.bucket4j.hazelcast.HazelcastTest.testThrowExceptionRecoveryStrategy
+io.github.bucket4j.hazelcast.HazelcastTest.testUnconditionalConsume
+io.github.bucket4j.hazelcast.HazelcastTest.testReconstructRecoveryStrategy
+io.github.bucket4j.hazelcast.HazelcastTest.testLocateConfigurationThroughProxyManager
+io.github.bucket4j.hazelcast.HazelcastTest.testTryConsumeAsync
+compatibility_test.LuaScriptIsolationTest.test
