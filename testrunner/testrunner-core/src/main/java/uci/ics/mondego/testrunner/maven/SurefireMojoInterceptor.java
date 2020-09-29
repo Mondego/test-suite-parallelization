@@ -18,8 +18,8 @@ public final class SurefireMojoInterceptor extends AbstractMojoInterceptor {
         }
         checkSurefireVersion(mojo);
         try {
-        	updateForkCounts(mojo);
-        	updateThreadCounts(mojo);
+        	//updateForkCounts(mojo);
+        	//updateThreadCounts(mojo);
         	updateTests(mojo);
         } catch (Exception ex) {
         	throw new Exception(UNSUPPORTED_SUREFIRE_VERSION_EXCEPTION);

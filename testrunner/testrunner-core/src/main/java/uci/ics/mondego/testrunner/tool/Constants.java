@@ -11,7 +11,7 @@ public interface Constants {
 
 	public static final String ABSTRACT_SUREFIRE_MOJO_VM = "org/apache/maven/plugin/surefire/AbstractSurefireMojo";
 	public static final String ABSTRACT_SUREFIRE_MOJO_BIN = "org.apache.maven.plugin.surefire.AbstractSurefireMojo";
-	public static final String SUREFIRE_INTERCEPTOR_CLASS_VM = "uci/ics/mondego/tldr/maven/SurefireMojoInterceptor";
+	public static final String SUREFIRE_INTERCEPTOR_CLASS_VM = "uci/ics/mondego/testrunner/maven/SurefireMojoInterceptor";
 	
 	public static final String EXECUTE_MNAME = "execute";
 	public static final String EXECUTE_MDESC = "()V";
@@ -25,7 +25,7 @@ public interface Constants {
     public static final String SKIP_FIELD = "skipTests";
 		
 	public static final String THREAD_COUNT_FIELD = "threadCount"; 
-	public static final String FORK_COUNT_FIELD = "forkcount";
+	public static final String FORK_COUNT_FIELD = "forkCount";
 	
 	public static final String USE_UNLIMITED_THREADS_FIELD = "useUnlimitedThreads";
 	public static final String PARALLEL_FIELD = "parallel";

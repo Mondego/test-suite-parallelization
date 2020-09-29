@@ -6,8 +6,6 @@ package uci.ics.mondego.testrunner.plugin;
 
 import java.lang.reflect.Field;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.apache.maven.artifact.DependencyResolutionRequiredException;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.surefire.AbstractSurefireMojo;
@@ -65,13 +63,13 @@ abstract class BaseMojo extends SurefirePlugin {
      * Optional flag to for the number of threads in each pool. Default value is 8.
      */
     @Parameter(property = "thread.count", required = false, defaultValue = "8")
-    protected static String thread_count;
+    protected String thread_count;
     
     /**
      * Optional flag to for the number of threads in each pool. Default value is 8.
      */
-    @Parameter(property = "fork.count", required = false, defaultValue = "8")
-    protected static String fork_count;
+    @Parameter(property = "fork.count", required = false, defaultValue = "1")
+    protected String fork_count;
     
     protected Classpath sureFireClassPath;
     

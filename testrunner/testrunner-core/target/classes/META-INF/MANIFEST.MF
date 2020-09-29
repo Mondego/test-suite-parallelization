@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Premain-Class: uci.ics.mondego.tldr.maven.JavaAgent
-Built-By: demigorgan
-Can-Redefine-Classes: true
-Agent-Class: uci.ics.mondego.tldr.maven.JavaAgent
-Can-Retransform-Classes: true
-Build-Jdk: 1.8.0_101
-Created-By: Maven Integration for Eclipse
-

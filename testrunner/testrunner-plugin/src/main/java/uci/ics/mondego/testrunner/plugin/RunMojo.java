@@ -17,8 +17,6 @@ import uci.ics.mondego.testrunner.tool.Constants;
 @Mojo(name = "run", requiresDependencyResolution = ResolutionScope.TEST)
 public class RunMojo extends DiffMojo {
 
-	 private static final Logger logger = LogManager.getLogger(RunMojo.class);	 
-
 	 @Override
 	 public void execute() throws MojoExecutionException, MojoFailureException  {
 		 System.setProperty(Constants.LOG_DIRECTORY, log_directory); 
@@ -26,12 +24,11 @@ public class RunMojo extends DiffMojo {
     	 
 		 // TLDR is flagged on. It gets the impacted tests and set the tests field on.
 	     if (AgentLoader.loadDynamicAgent()) {
-	       System.setProperty(Constants.FORK_COUNT_FIELD, fork_count);
-	       System.setProperty(Constants.THREAD_COUNT_FIELD, thread_count);
-	       System.setProperty(Constants.TLDR_TEST_PROPERTY, getFailedTests());
+	       System.setProperty(Constants.FORK_COUNT_FIELD, "1");
+	       System.setProperty(Constants.THREAD_COUNT_FIELD, "6");
+	       System.setProperty(Constants.TLDR_TEST_PROPERTY, "*");
 	     } else {
 	            throw new MojoExecutionException("Agent attachment failed");
 	     }
-	     
 	 }
 }

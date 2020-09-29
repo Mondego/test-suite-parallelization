@@ -18,7 +18,7 @@ import uci.ics.mondego.testrunner.tool.Constants;
 /**
  * Mojo to run TLDR A sample command to run this plugin would look like  - 
  * 
- * mvn -q com.mondego.ics.uci:tldr-plugin:1.0.2-SNAPSHOT:tldr 
+ * mvn -q com.mondego.ics.uci:testrunner-plugin:1.0.2-SNAPSHOT:tldr 
  * -Dcommit.serial=<serial>
  * -Dcommit.hash=<hash>
  * -Dlog.directory=<log_dir> 
@@ -50,23 +50,4 @@ public class TestRunnerMojo extends RunMojo {
     		 System.out.println(Constants.DISTINCTION_LINE_STAR);
     	 }
 	 } 
-	
-	private String getLogDirectory() {
-		
-		String logFolder = log_directory  + Constants.SLASH;
-		
-		File file = new File(logFolder);
-        if (!file.exists()) {
-            if (file.mkdirs()) {
-            	logger.debug("Log Directory is created!");
-            } 
-            else {
-            	logger.debug("Failed to create log directory!");
-            }
-        } 
-        else {
-        	logger.debug("Log directory exists already!");
-        }
-        return logFolder;
-	}
 }
