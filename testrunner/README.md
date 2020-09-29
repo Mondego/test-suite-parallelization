@@ -1,8 +1,6 @@
-TLDR : Too Long, Didn't Regress.
+Safe Parallel Test Runner.
 =================================
 [![Build Status](https://travis-ci.com/Mondego/TLDR.svg?token=o5WYd55iTZU8HSqiSULp&branch=master)](https://travis-ci.com/Mondego/TLDR)
-
-TLRD is an opensource Regression Test Selection (RTS) tool with minimal selection overhead. It is a maven plugin that selects minimum number of test cases and yet maintains safety during incremental development. This plugin works for Maven projects written in Java. This plugin can be run in tandem with JUnit 4.11 and Surefire 2.17.3.
 
 
 Running TLDR
@@ -10,7 +8,7 @@ Running TLDR
 
 To run TLDR with a project, follow these steps:
 
-* Clone TLDR repository.
+* Clone this repository.
 
 * `cd` to TLDR repository and type `mvn install` in the terminal. This will compile and install TLDR in your local maven repository.
 
@@ -19,21 +17,18 @@ To run TLDR with a project, follow these steps:
 brew update
 brew install redis
 ```
-* Run the redis server using the following command in the terminal -- 
-
-`redis-server`
 
 * Add this xml code in the `plugins` section of the `pom.xml` file of the project on which you want to use TLDR - 
 ```
 <plugin>
     <groupId>com.mondego.ics.uci</groupId>
-    <artifactId>tldr-plugin</artifactId>
+    <artifactId>testrunner-plugin</artifactId>
     <version>1.0.2-SNAPSHOT</version>
 </plugin>
 ```
 * Type the following maven command to run tests with TLDR - 
 ```
-mvn tldr:tldr
+mvn testrunner:testrunner
 ```
 If the project has used `rat` or `checkStyle` plugin turn them off - 
 ```
@@ -47,9 +42,5 @@ If the project has used `rat` or `checkStyle` plugin turn them off -
  `log.directory` -- The directory where the logs will be written. If this flag is not used then by default log is written to the home directory.  
  `debug.flag` -- Setting it to `true` will turn off debug logs. 
  `multimodule.projectname` -- Name of a multi-module is passed by this flag. 
-
-Contributing to TLDR
---------------------
-The project is currently under active construction. Details will follow as we continue to build it. We aren't welcoming contribution just yet.
-
-If you have any question, suggestions, or concerns about the tool feel free to email mzaber at uci dot edu
+ `thread.count` -- Number of threads
+ `fork.count` -- Number of forks.
