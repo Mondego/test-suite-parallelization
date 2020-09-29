@@ -3,8 +3,8 @@ Safe Parallel Test Runner.
 [![Build Status](https://travis-ci.com/Mondego/TLDR.svg?token=o5WYd55iTZU8HSqiSULp&branch=master)](https://travis-ci.com/Mondego/TLDR)
 
 
-Running TLDR
--------------
+Running Instruction
+-------------------
 
 To run TLDR with a project, follow these steps:
 
