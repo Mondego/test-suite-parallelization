@@ -10,11 +10,10 @@
 #
 
 import os, re
-
 from shutil import rmtree
 from subprocess import call, check_output
 
-from utils import TimeInterval, CSVOutput, Query, verify_maven_support
+#from utils import TimeInterval, CSVOutput, Query, verify_maven_support
 
 
 def git_revision(project_path):
