@@ -29,8 +29,6 @@ else:
     git_url=[];
     commit_count=[];
 #search java projects on github  pick 100 
-#for i, repo in enumerate(g.search_repositories("topic:maven")): 
-print("test")
 for i,repo in  enumerate(g.search_repositories("topic:maven")):
         #amount of public repos 
         print("="*1000)
@@ -42,12 +40,12 @@ for i,repo in  enumerate(g.search_repositories("topic:maven")):
         temp_data['language']=repo.language
         temp_data['commit_count']=repo.get_commits().totalCount
         temp_data['git_url']=repo.git_url
-        #os.system("git clone {}".format(repo.git_url))
+      
         
 
 
 
-        #print(dir(repo)
+
         repo_name.append(temp_data['name']);
         #stars
         stars.append(temp_data['stars']);
@@ -76,16 +74,17 @@ for i,repo in  enumerate(g.search_repositories("topic:maven")):
 
         java_projects.loc[java_projects['language']=='java']
 
-        #uncomment this line when you aread to download projects
+       
         dirName='cloned_projects'
         os.mkdir(dirName)
         os.chdir(dirName)
+        #uncomment to download projects 
        #os.system("git clone {}".format(java_projects["git_url"]))
 
   
         
 
-        print(java_projects.head(3))
+        
         java_projects.to_csv('project_metadata.csv') 
 
  
