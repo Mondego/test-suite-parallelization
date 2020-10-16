@@ -32,12 +32,15 @@ else:
     commit_count=[];
  
 #search java projects on github  pick 100 
+<<<<<<< HEAD
 #for i, repo in enumerate(g.search_repositories("topic:maven")): 
 #print("test")
 
 
 #epo_commits=requests.get('https://api.github.com/repos/octocat/Hello-World/commits')
 
+=======
+>>>>>>> aa535c9e9a4712e1f26fea0778f9ae38e2764a8f
 for i,repo in  enumerate(g.search_repositories("topic:maven")):
 
         #amount of public repos
@@ -52,9 +55,18 @@ for i,repo in  enumerate(g.search_repositories("topic:maven")):
         temp_data["stars"] = repo.stargazers_count
         temp_data['language']=repo.language
         temp_data['git_url']=repo.git_url
+<<<<<<< HEAD
         temp_data['commit_count']= repo.get_commits().totalCount;
         print(temp_data)
     
+=======
+      
+        
+
+
+
+
+>>>>>>> aa535c9e9a4712e1f26fea0778f9ae38e2764a8f
         repo_name.append(temp_data['name']);
         #stars
         stars.append(temp_data['stars']);
@@ -83,10 +95,16 @@ for i,repo in  enumerate(g.search_repositories("topic:maven")):
 
         java_projects.loc[java_projects['language']=='java']
 
-        #uncomment this line when you aread to download projects
+       
         dirName='cloned_projects'
+<<<<<<< HEAD
         #os.mkdir(dirName)
         #os.chdir(dirName)
+=======
+        os.mkdir(dirName)
+        os.chdir(dirName)
+        #uncomment to download projects 
+>>>>>>> aa535c9e9a4712e1f26fea0778f9ae38e2764a8f
        #os.system("git clone {}".format(java_projects["git_url"]))
 
   
@@ -95,6 +113,11 @@ for i,repo in  enumerate(g.search_repositories("topic:maven")):
         print(java_projects.columns)
         #java_projects.to_csv('project_metadata.csv') 
 
+<<<<<<< HEAD
+=======
+        
+        java_projects.to_csv('project_metadata.csv') 
+>>>>>>> aa535c9e9a4712e1f26fea0778f9ae38e2764a8f
 
  
  
