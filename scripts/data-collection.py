@@ -38,7 +38,7 @@ for i,repo in  enumerate(g.search_repositories("topic:maven")):
         #amount of public repos
         
         print("="*100)
-        if i == 10:
+        if i == 3:
             break
         #print(dir(repo))
         
@@ -72,13 +72,13 @@ for i,repo in  enumerate(g.search_repositories("topic:maven")):
 
         java_projects['commits']=commit_count
 
-        java_projects.loc[java_projects['stars'] >=50]
+        java_projects[java_projects['stars'] >=50]
 
-        #java_projects.loc[java_projects['commits'] >=100]
+        java_projects[java_projects['commits'] >=100]
 
-        cleaned = java_projects[java_projects['language']=='Java']
+        java_projects= java_projects[java_projects['language']=='Java']
 
-        print(cleaned)
+        print(java_projects)
 
        
         dirName='cloned_projects'
