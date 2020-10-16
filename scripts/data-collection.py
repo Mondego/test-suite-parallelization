@@ -4,8 +4,10 @@ import os
 import base64
 import json
 import requests
-import pandas as pd
 import datetime
+from datetime import datetime, timedelta
+import pandas as pd
+import io 
 from github import Github
 #user your username 
 username = "vanessailana"
@@ -28,26 +30,31 @@ else:
     created_at=[];
     git_url=[];
     commit_count=[];
+ 
 #search java projects on github  pick 100 
 #for i, repo in enumerate(g.search_repositories("topic:maven")): 
-print("test")
+#print("test")
+
+
+#epo_commits=requests.get('https://api.github.com/repos/octocat/Hello-World/commits')
+
 for i,repo in  enumerate(g.search_repositories("topic:maven")):
-        #amount of public repos 
-        print("="*1000)
-        if i==100:
+
+        #amount of public repos
+        
+        print("="*100)
+        if i == 10:
             break
+        #print(dir(repo))
+        
         temp_data = {}
         temp_data["name"] = repo.name
         temp_data["stars"] = repo.stargazers_count
         temp_data['language']=repo.language
-        temp_data['commit_count']=repo.get_commits().totalCount
         temp_data['git_url']=repo.git_url
-        #os.system("git clone {}".format(repo.git_url))
-        
-
-
-
-        #print(dir(repo)
+        temp_data['commit_count']= repo.get_commits().totalCount;
+        print(temp_data)
+    
         repo_name.append(temp_data['name']);
         #stars
         stars.append(temp_data['stars']);
@@ -78,15 +85,16 @@ for i,repo in  enumerate(g.search_repositories("topic:maven")):
 
         #uncomment this line when you aread to download projects
         dirName='cloned_projects'
-        os.mkdir(dirName)
-        os.chdir(dirName)
+        #os.mkdir(dirName)
+        #os.chdir(dirName)
        #os.system("git clone {}".format(java_projects["git_url"]))
 
   
         
+        java_projects.drop(java_projects.columns[0], axis=1)
+        print(java_projects.columns)
+        #java_projects.to_csv('project_metadata.csv') 
 
-        print(java_projects.head(3))
-        java_projects.to_csv('project_metadata.csv') 
 
  
  
