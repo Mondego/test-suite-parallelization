@@ -2,6 +2,7 @@
 
 import os
 import base64
+import random
 import json
 import requests
 import datetime
@@ -31,14 +32,10 @@ else:
     git_url=[];
     commit_count=[];
  
-#search java projects on github  pick 100 
 
-for i,repo in  enumerate(g.search_repositories("topic:maven")):
-
-        #amount of public repos
-        
-        print("="*100)
-        if i == 3:
+for i,repo in  enumerate(g.search_repositories("language:Java")):
+       
+        if i == 100:
             break
         #print(dir(repo))
         
@@ -82,15 +79,120 @@ for i,repo in  enumerate(g.search_repositories("topic:maven")):
 
        
         dirName='cloned_projects'
-        #os.mkdir(dirName)
-        #os.chdir(dirName)
-       #os.system("git clone {}".format(java_projects["git_url"]))
+        os.mkdir(dirName)
+        os.chdir(dirName)
+        print("Starting to clone {}".format(repo.name))
+        cmd = "git clone {}".format(repo.git_url)
+        print("Starting to clone {}".format(repo.name))
+        print("Running command '{}'".format(cmd))
+        os.system(cmd)
+        print("Finshed cloning {}".format(repo.name))
 
-  
+           
         
-        java_projects.drop(java_projects.columns[0], axis=1)
+        
      
         java_projects.to_csv('project_metadata.csv') 
+
+                dirName='cloned_projects'
+        os.mkdir(dirName)
+        os.chdir(dirName)
+        print("Starting to clone {}".format(repo.name))
+        cmd = "git clone {}".format(repo.git_url)
+        print("Starting to clone {}".format(repo.name))
+        print("Running command '{}'".format(cmd))
+        os.system(cmd)
+        print("Finshed cloning {}".format(repo.name))
+
+           
+        
+        
+     
+        java_projects.to_csv('project_metadata.csv') 
+
+                dirName='cloned_projects'
+        os.mkdir(dirName)
+        os.chdir(dirName)
+        print("Starting to clone {}".format(repo.name))
+        cmd = "git clone {}".format(repo.git_url)
+        print("Starting to clone {}".format(repo.name))
+        print("Running command '{}'".format(cmd))
+        os.system(cmd)
+        print("Finshed cloning {}".format(repo.name))
+
+           
+        
+        
+     
+        java_projects.to_csv('project_metadata.csv') 
+
+                dirName='cloned_projects'
+        os.mkdir(dirName)
+        os.chdir(dirName)
+        print("Starting to clone {}".format(repo.name))
+        cmd = "git clone {}".format(repo.git_url)
+        print("Starting to clone {}".format(repo.name))
+        print("Running command '{}'".format(cmd))
+        os.system(cmd)
+        print("Finshed cloning {}".format(repo.name))
+
+           
+        
+        
+     
+        java_projects.to_csv('project_metadata.csv') 
+
+
+  
+            dirName='cloned_projects'
+        os.mkdir(dirName)
+        os.chdir(dirName)
+        print("Starting to clone {}".format(repo.name))
+        cmd = "git clone {}".format(repo.git_url)
+        print("Starting to clone {}".format(repo.name))
+        print("Running command '{}'".format(cmd))
+        os.system(cmd)
+        print("Finshed cloning {}".format(repo.name))
+
+           
+        
+        
+     
+        java_projects.to_csv('project_metadata.csv') 
+
+                dirName='cloned_projects'
+        os.mkdir(dirName)
+        os.chdir(dirName)
+        print("Starting to clone {}".format(repo.name))
+        cmd = "git clone {}".format(repo.git_url)
+        print("Starting to clone {}".format(repo.name))
+        print("Running command '{}'".format(cmd))
+        os.system(cmd)
+        print("Finshed cloning {}".format(repo.name))
+
+           
+        
+        
+     
+        java_projects.to_csv('project_metadata.csv') 
+
+     
+                dirName='cloned_projects'
+        os.mkdir(dirName)
+        os.chdir(dirName)
+        print("Starting to clone {}".format(repo.name))
+        cmd = "git clone {}".format(repo.git_url)
+        print("Starting to clone {}".format(repo.name))
+        print("Running command '{}'".format(cmd))
+        os.system(cmd)
+        print("Finshed cloning {}".format(repo.name))
+
+           
+        
+        
+     
+        java_projects.to_csv('project_metadata.csv') 
+
 
 
  
