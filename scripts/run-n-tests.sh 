@@ -1,0 +1,47 @@
+#!/bin/sh
+
+#clone python projects 
+# switch over to other script 
+#run python script to save java_projects directory 
+#python3 ../data-collection.py
+surfire_parser_dir='../tools/surefirereportparser/'
+#path to save file. 
+myPath='../test-suite-parallelization'
+
+cd  java_projects
+
+
+for java_project in $(ls);
+do
+    cd $java_project
+    if mvn clean compile;then 
+
+            echo "success"
+            mvn surefire-report:report -fae
+
+            cd $surefire_parser_dir
+            numbers=$(mvn -q compile exec:java -Dexec.args="$java_projects/$java_project")
+            cd $java_projects/$java_project
+
+
+            if $numbers < 100
+            then
+                rm -rf $java_project
+            fi
+
+            
+
+
+
+    else
+            echo "failure " $java_project >> log.txt
+
+
+    fi
+
+    cd ..
+
+done
+
+
+
